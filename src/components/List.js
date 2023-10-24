@@ -1,18 +1,11 @@
-function List({itens}){
+function List({setNome}){
 
     return(
-        <>
-        <h3>Lista de coisas:</h3>
-        {
-            itens.length > 0? (
-                itens.map((item,index) =>(
-                    <p key={index}>{item}</p>
-                ))
-            ) : (
-                <p>Não há itens na Lista</p>
-            )
-        }
-        </>
+        <div>
+            <p>Digite o seu nome:</p>
+            <input type="text" placeholder="Qual é o seu nome?" onChange={(e) => setNome(e.target.value)}/>
+            
+        </div>
     )
 }
 export default List

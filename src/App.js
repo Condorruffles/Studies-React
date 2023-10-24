@@ -1,14 +1,19 @@
+import { useState } from 'react';
 import './App.css';
 import List from './components/List';
 function App() {
-
-  const meusItens = ['React','Vue','Angular']
-
+  const [nome,setNome] = useState()
   return (
     <div className="App">
-      <h1>Renderização de listas</h1>
-      <List itens={meusItens} />
-      <List itens={[]}/>
+      <h1>State lift</h1>
+      <List setNome={setNome} />
+      {nome &&(
+        nome === 'Raphael'? (
+          nome + " é muito foda!"
+        ):(
+          nome + " dá o boga"
+        )
+      )}
     </div>
   );
 }
